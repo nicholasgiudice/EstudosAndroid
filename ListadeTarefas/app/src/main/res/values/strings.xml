@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lista de Tarefas</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="add_button">Adicionar</string>
+</resources>
