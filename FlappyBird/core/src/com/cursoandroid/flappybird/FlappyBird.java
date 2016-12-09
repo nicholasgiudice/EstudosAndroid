@@ -15,7 +15,6 @@ import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-//import com.sun.xml.internal.bind.v2.runtime.unmarshaller.Intercepter;
 
 import java.util.Random;
 
@@ -60,9 +59,7 @@ public class FlappyBird extends ApplicationAdapter {
         passaro = new Texture[3];
         numeroRandomico = new Random();
         passaroCirculo = new Circle();
-        //retanguloCanoTopo = new Rectangle();
-        //retanguloCanoBaixo = new Rectangle();
-        //shape = new ShapeRenderer();
+
         fonte = new BitmapFont();
         fonte.setColor(Color.WHITE);
         fonte.getData().setScale(6);
@@ -89,7 +86,7 @@ public class FlappyBird extends ApplicationAdapter {
         alturaDispositivo = VIRTUAL_HEIGHT;
         posicaoInicialVertical = alturaDispositivo / 2;
         posicaoMovimentoCanoHorizontal = larguraDispositivo;
-        espacoEntreCanos = 300;
+        espacoEntreCanos = 220;
 	}
 
 	@Override
@@ -163,17 +160,7 @@ public class FlappyBird extends ApplicationAdapter {
         retanguloCanoBaixo = new Rectangle(posicaoMovimentoCanoHorizontal, alturaDispositivo / 2 - canoBaixo.getHeight() - espacoEntreCanos / 2 + alturaEntreCanosRandomica, canoBaixo.getWidth(), canoBaixo.getHeight());
         retanguloCanoTopo = new Rectangle(posicaoMovimentoCanoHorizontal, alturaDispositivo / 2 + espacoEntreCanos / 2 + alturaEntreCanosRandomica, canoTopo.getWidth(), canoTopo.getHeight());
 
-        //Desenhar formar
-        /*
-        shape.begin( ShapeRenderer.ShapeType.Filled);
-        shape.circle(passaroCirculo.x, passaroCirculo.y, passaroCirculo.radius);
-        shape.rect(retanguloCanoBaixo.x, retanguloCanoBaixo.y, retanguloCanoBaixo.width, retanguloCanoBaixo.height);
-        shape.rect(retanguloCanoTopo.x, retanguloCanoTopo.y, retanguloCanoTopo.width, retanguloCanoTopo.height);
-        shape.setColor(Color.RED);
-        shape.end();*/
-
         //Teste de colição
-
         if(Intersector.overlaps(passaroCirculo, retanguloCanoBaixo) || Intersector.overlaps(passaroCirculo, retanguloCanoTopo)
                 || posicaoInicialVertical <= 0 || posicaoInicialVertical >= alturaDispositivo)  {
             estadoJogo = 2;
